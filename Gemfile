@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 # gem "gsl" not supported by Netlify
 gem "jekyll"
+gem "stackprof"
 
 group :jekyll_plugins do
   # "jekyll-paginate-v2"
