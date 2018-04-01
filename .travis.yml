@@ -5,7 +5,9 @@ rvm:
 - 2.4
 
 before_script: bundle update
-script: bundle exec ruby script/stackprof
+script:
+- bundle exec ruby script/stackprof
+- bundle exec stackprof tmp/stackprof/stackprof.dump
 
 branches:
   only:
