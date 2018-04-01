@@ -7,7 +7,7 @@ rvm:
 before_script: bundle update
 script:
 - bundle exec ruby script/stackprof
-- bundle exec stackprof tmp/stackprof/stackprof.dump --method 'Jekyll::Commands::Build.process'
+- bundle exec stackprof tmp/stackprof/stackprof.dump
 
 branches:
   only:
