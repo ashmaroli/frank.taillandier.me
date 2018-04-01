@@ -5,6 +5,7 @@ require "json"
 require "stackprof"
 require "jekyll"
 
+FileUtils.mkdir_p "../tmp/stackprof"
 MODE = ARGV.first || "cpu"
 PROF_OUTPUT_FILE = File.expand_path("../tmp/stackprof/stackprof-#{MODE}-#{Time.now.strftime("%Y%m%d%H%M")}.dump", __dir__)
 
