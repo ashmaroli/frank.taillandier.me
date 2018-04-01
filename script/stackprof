@@ -7,7 +7,7 @@ require "jekyll"
 
 FileUtils.mkdir_p File.expand_path("../tmp/stackprof", __dir__)
 MODE = ARGV.first || "cpu"
-PROF_OUTPUT_FILE = File.expand_path("../tmp/stackprof/stackprof-#{MODE}-#{Time.now.strftime("%Y%m%d%H%M")}.dump", __dir__)
+PROF_OUTPUT_FILE = File.expand_path("../tmp/stackprof/stackprof.dump", __dir__)
 
 puts "Stackprof Mode: #{MODE}"
 
