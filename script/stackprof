@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "json"
+require "stackprof"
+require "jekyll"
+
+MODE = ARGV.first || "cpu"
+PROF_OUTPUT_FILE = File.expand_path("../tmp/stackprof/stackprof-#{MODE}-#{Time.now.strftime("%Y%m%d%H%M")}.dump", __dir__)
+
+puts "Stackprof Mode: #{MODE}"
+
+unless File.exist?(PROF_OUTPUT_FILE)
+  StackProf.run(
+    mode: MODE.to_sym,
+    interval: 5000,
+    raw: true,
+    out: PROF_OUTPUT_FILE
+  ) do
+    puts "GC Stats:", JSON.pretty_generate(GC.stat)
+    GC.disable
+
+    Jekyll::PluginManager.require_from_bundler
+    Jekyll::Commands::Build.process({})
+
+    puts 'GC Stats:'
+    GC.start(full_mark: true, immediate_sweep: false)
+    puts JSON.pretty_generate(GC.stat)
+  end
+end
+
+options = {
+  sort: true,
+  limit: 20,
+  format: :text,
+}
+
+# You can also do other things. Examples:
+# https://github.com/tmm1/stackprof/blob/master/bin/stackprof
+report = StackProf::Report.new(Marshal.load(IO.binread(PROF_OUTPUT_FILE)))
+report.print_text(
+  options[:sort],
+  options[:limit],
+  options[:select_files],
+  options[:reject_files],
+  options[:select_names],
+  options[:reject_names]
+)
+
+puts "Results stored in #{PROF_OUTPUT_FILE}"
