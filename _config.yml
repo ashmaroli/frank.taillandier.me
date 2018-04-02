@@ -68,7 +68,7 @@ include:
   - _headers
   - _pages
 
-lsi: true
+lsi: false
 
 pagination:
   enabled: false
