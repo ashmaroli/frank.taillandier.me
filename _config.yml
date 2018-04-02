@@ -37,7 +37,7 @@ social:
 
 cloudinary:
   cloud_name: jamstatic
-  verbose: true
+  verbose: false
   presets:
     default:
       min_width: 320
