@@ -15,7 +15,7 @@ group :jekyll_plugins do
   gem "jekyll-github-metadata"
   gem "jekyll-include-cache"
   gem "jekyll-last-modified-at"
-  gem "jekyll-mentions"
+  # gem "jekyll-mentions"
   gem "jekyll-microtypo"
   gem "jekyll-pwa-plugin"
   gem "jekyll-redirect-from"
@@ -24,7 +24,8 @@ group :jekyll_plugins do
   gem "jekyll-tidy"
   gem "jekyll-typogrify"
   gem "jekyll_reading_time", :git => "https://github.com/DirtyF/jekyll_reading_time.git", :branch => "memoize-configuration"
-  gem "jemoji"
+  gem "jekyll-mentioji", :git => "https://github.com/ashmaroli/jekyll-mentioji.git", :branch => "master"
+  # gem "jemoji"
 end
 
 group :development do
