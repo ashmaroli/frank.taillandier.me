@@ -102,12 +102,12 @@ plugins:
   - jekyll-github-metadata
   - jekyll-include-cache
   - jekyll-last-modified-at
-  - jekyll-mentions
+  # jekyll-mentions
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-tidy
-  - jemoji
+  # jemoji
   # jekyll-paginate-v2
 
 # About
