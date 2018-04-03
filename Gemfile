@@ -23,7 +23,7 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-tidy"
   gem "jekyll-typogrify"
-  gem "jekyll_reading_time", :git => "https://github.com/DirtyF/jekyll_reading_time.git", :branch => "memoize-configuration"
+  gem "jekyll_reading_time", :git => "https://github.com/RouteMap/jekyll_reading_time.git", :branch => "master"
   gem "jekyll-mentioji", :git => "https://github.com/ashmaroli/jekyll-mentioji.git", :branch => "master"
   # gem "jemoji"
 end
