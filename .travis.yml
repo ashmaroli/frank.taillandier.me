@@ -2,9 +2,10 @@ language: ruby
 cache: bundler
 sudo: false
 rvm:
-- 2.4
+- 2.5.1
+- 2.4.4
 
-before_script: bundle update
+before_install: gem install bundler
 script:
 - bundle exec ruby script/stackprof
 - bundle exec stackprof tmp/stackprof/stackprof.dump --method 'SafeYAML::Transform.to_guessed_type'
