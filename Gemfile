@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 # gem "gsl" not supported by Netlify
 gem "jekyll", :git => "https://github.com/ashmaroli/jekyll.git", :branch => "optima/benchmark"
+gem "rouge", :git => "https://github.com/ashmaroli/rouge.git", :branch => "frozen-strings"
 gem "memory_profiler"
 gem "stackprof" unless Gem.win_platform?
 
