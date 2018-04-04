@@ -7,8 +7,9 @@ rvm:
 
 before_install: gem install bundler
 script:
-- bundle exec ruby script/stackprof
-- bundle exec stackprof tmp/stackprof/stackprof.dump --method 'SafeYAML::Transform.to_guessed_type'
+- bundle exec ruby script/memory_profiler
+# - bundle exec ruby script/stackprof
+# - bundle exec stackprof tmp/stackprof/stackprof.dump --method 'SafeYAML::Transform.to_guessed_type'
 
 branches:
   only:

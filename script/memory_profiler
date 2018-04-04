@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "memory_profiler"
+
+report = MemoryProfiler.report do
+  require "jekyll"
+  Jekyll::PluginManager.require_from_bundler
+  Jekyll::Commands::Build.process({})
+end
+
+report.pretty_print
