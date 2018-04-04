@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 # gem "gsl" not supported by Netlify
 gem "jekyll", :git => "https://github.com/ashmaroli/jekyll.git", :branch => "optima/benchmark"
-gem "stackprof"
+gem "stackprof" unless Gem.win_platform?
 
 group :jekyll_plugins do
   # gem "jekyll-paginate-v2"
