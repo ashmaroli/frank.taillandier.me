@@ -2,11 +2,10 @@
 
 source "https://rubygems.org"
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
-
 # gem "gsl", install_if: -> { ENV["JEKYLL_ENV"] == "development" }
 gem "jekyll"
 gem "liquid-c"
+gem "memory_profiler", github: "SamSaffron/memory_profiler"
 
 group :jekyll_plugins do
   # "jekyll-paginate-v2"
