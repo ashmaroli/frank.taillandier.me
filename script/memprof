@@ -4,6 +4,8 @@
 require 'jekyll'
 require 'memory_profiler'
 
+Jekyll::PluginManager.require_from_bundler
+
 report = MemoryProfiler.report do
   Jekyll::Commands::Build.process(
     "source"      => File.expand_path('..', __dir__),
