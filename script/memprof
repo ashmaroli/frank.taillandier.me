@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'jekyll'
+require 'memory_profiler'
+
+report = MemoryProfiler.report do
+  Jekyll::Commands::Build.process(
+    "source"      => File.expand_path('..', __dir__),
+    "destination" => File.expand_path('../_site', __dir__),
+  )
+end
+
+puts "\nGenerating results..\n\n"
+report.pretty_print(scale_bytes: true, normalize_paths: true, color_output: false)
